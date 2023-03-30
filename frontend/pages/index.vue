@@ -7,6 +7,7 @@
         <div class="uk-flex-middle uk-flex-center">
         <h2 class="whitetext uk-text-middle uk-text-center uk-heading-medium">Choose Nourish</h2>
         <p class="whitetext thintext uk-text-middle uk-text-center uk-text-large uk-text-light">Restrictive can be delicious</p>
+        <p class="whitetext thintext uk-text-middle uk-text-center uk-text-large uk-text-light">this is live on my domain</p>
         </div>
       </div>
    </div>
