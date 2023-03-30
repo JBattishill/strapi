@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
+    "displayName": "article",
     "description": ""
   },
   "options": {
@@ -39,7 +39,7 @@
     "Ingredients": {
       "type": "richtext"
     },
-    "method": {
+    "Method": {
       "type": "richtext"
     }
   }
