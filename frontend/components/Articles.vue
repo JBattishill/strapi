@@ -8,7 +8,7 @@
           class="uk-link-reset"
           :key="article.id"
         >
-          <div class="uk-card uk-card-muted">
+          <div class="uk-card uk-card-muted uk-card-hover">
             <div v-if="article.attributes.image.data" class="uk-card-media-top">
               <img
                 :src="api_url + article.attributes.image.data.attributes.url"
@@ -24,7 +24,7 @@
               >
                 {{ article.attributes.category.data.attributes.name }}
               </p>
-              <p id="title" class="uk-text-large">
+              <p id="title" class="uk-text-small">
                 {{ article.attributes.title }}
               </p>
             </div>
@@ -58,7 +58,7 @@
                 >
                   {{ article.attributes.category.data.attributes.name }}
                 </p>
-                <p id="title" class="uk-text-large">
+                <p id="title" class="uk-text-small">
                   {{ article.attributes.title }}
                 </p>
               </div>

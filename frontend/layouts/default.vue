@@ -9,7 +9,7 @@
             ></a>
           </li>
           <li>
-            <a href="/index">Choose Nourish </a>
+            <a href="/">Choose Nourish </a>
           </li>
         </ul>
       </div>
@@ -17,7 +17,7 @@
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
           <li v-for="category in categories.data" :key="category.id">
-            <NuxtLink
+            <NuxtLink 
               :to="{ name: 'categories-id', params: { id: category.id } }"
               >{{ category.attributes.name }}
             </NuxtLink>
@@ -45,7 +45,8 @@
             uk-height-viewport
           ></div>
           <div class="uk-padding-large">
-            <h1 style="font-family: Staatliches">Choose Nourish</h1>
+            <h3>The Collapsed Menu</h3>
+            
             <div class="uk-width-1-2@s">
               <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
                 <li v-for="category in categories.data" :key="category.id">
@@ -57,7 +58,7 @@
                 </li>
               </ul>
             </div>
-            <p class="uk-text-light">text default.vue - line 60</p>
+            <p class="uk-text-light">Bottom menu - default.vue - line 60</p>
           </div>
         </div>
       </div>

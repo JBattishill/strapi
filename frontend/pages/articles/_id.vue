@@ -1,21 +1,25 @@
 <template>
   <div>
+    <div class="spacer"></div>
+
     <div
       v-if="article.data.attributes.image.data"
-      id="banner"
-      class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
+      class="uk-align-center uk-width-expand uk-height-medium uk-margin-small"
       :data-src="api_url + article.data.attributes.image.data.attributes.url"
-      uk-img
-    >
-      <h1>{{ article.data.attributes.title }}</h1>
+      uk-img>
     </div>
 
     <div class="uk-section">
       <div class="uk-container uk-container-small">
-        <div v-if="article.data.attributes.content" id="editor" v-html="$md.render(article.data.attributes.content)"></div>
-        <p v-if="article.data.publishedAt">
-          {{ article.data.attributes.publishedAt }}
-        </p>
+      <p class="uk-heading-large uk-text-center uk-padding-small">{{ article.data.attributes.title}}</p>
+
+        <!-- successfully pulling all components of Recipe/Article -->
+        <div class="uk-padding-small" v-if="article.data.attributes.category" id="editor" v-html="$md.render(article.data.attributes.category)"></div>
+        <div class="uk-padding-small" v-if="article.data.attributes.content" id="editor" v-html="$md.render(article.data.attributes.content)"></div>
+        <div class="uk-padding-small" v-if="article.data.attributes.ingredients" id="editor" v-html="$md.render(article.data.attributes.ingredients)"></div>
+        <div class="uk-padding-small" v-if="article.data.attributes.method" id="editor" v-html="$md.render(article.data.attributes.method)"></div>
+        <p v-if="article.data.publishedAt"> {{ article.data.attributes.publishedAt }}</p>
+
       </div>
     </div>
   </div>
