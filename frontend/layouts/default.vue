@@ -9,7 +9,7 @@
             ></a>
           </li>
           <li>
-            <a href="/">Strapi Blog </a>
+            <a href="/">Choose Nourish </a>
           </li>
         </ul>
       </div>
@@ -45,7 +45,7 @@
             uk-height-viewport
           ></div>
           <div class="uk-padding-large">
-            <h1 style="font-family: Staatliches">Strapi blog</h1>
+            <h1 style="font-family: Staatliches">Choose Nourish</h1>
             <div class="uk-width-1-2@s">
               <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
                 <li v-for="category in categories.data" :key="category.id">
