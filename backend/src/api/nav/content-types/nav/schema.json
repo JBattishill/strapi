@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navs",
+  "info": {
+    "singularName": "nav",
+    "pluralName": "navs",
+    "displayName": "Nav"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Item": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

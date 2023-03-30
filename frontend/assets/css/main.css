@@ -57,11 +57,6 @@ img:hover {
   letter-spacing: .1rem;
 }
 
-.spacer{
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-}
-
-.imagedark{
-  filter: brightness(50%)
+.toplogo{
+max-height: 5rem;
 }

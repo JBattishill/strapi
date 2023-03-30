@@ -1,25 +1,25 @@
 <template>
-  <div>
+  <div class="">
     <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
+      <div class="uk-navbar-left uk-width-1-2">
+        <ul class="uk-navbar-nav uk-padding-small">
           <li>
             <a href="#modal-full" uk-toggle
               ><span uk-icon="icon: table"></span
             ></a>
           </li>
           <li>
-            <a href="/">Choose Nourish </a>
+            <a href="/"><img class="toplogo" src="../../frontend/static/whitecnlogo.png" alt="Choose Nourish Logo."/></a>
           </li>
         </ul>
       </div>
 
-      <div class="uk-navbar-right">
+      <div class="uk-navbar-center">
         <ul class="uk-navbar-nav">
-          <li v-for="category in categories.data" :key="category.id">
+          <li v-for="nav in navs.data" :key="nav.id">
             <NuxtLink 
-              :to="{ name: 'categories-id', params: { id: category.id } }"
-              >{{ category.attributes.name }}
+              :to="{ name: 'nav-id', params: { id: nav.id } }"
+              >{{ nav.attributes.Item }}
             </NuxtLink>
           </li>
         </ul>
@@ -37,23 +37,16 @@
           class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle"
           uk-grid
         >
-          <div
-            class="uk-background-cover"
-            style="
-              background-image: url('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3308&q=80');
-            "
-            uk-height-viewport
-          ></div>
           <div class="uk-padding-large">
             <h3>The Collapsed Menu</h3>
             
             <div class="uk-width-1-2@s">
               <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
-                <li v-for="category in categories.data" :key="category.id">
+                <li v-for="nav in navs.data" :key="nav.id">
                   <NuxtLink
                     class="uk-modal-close"
-                    :to="{ name: 'categories-id', params: { id: category.id } }"
-                    >{{ category.attributes.name }}
+                    :to="{ name: 'nav-id', params: { id: nav.id } }"
+                    >{{ nav.attributes.Item }}
                   </NuxtLink>
                 </li>
               </ul>
@@ -69,20 +62,20 @@
 </template>
 
 <script>
-import categoriesQuery from "~/apollo/queries/category/categories";
+import navsQuery from "~/apollo/queries/nav/navs";
 
 export default {
   data() {
     return {
-      categories: {
+      navs: {
         data: [],
       },
     };
   },
   apollo: {
-    categories: {
+    navs: {
       prefetch: true,
-      query: categoriesQuery,
+      query: navsQuery,
     },
   },
 };
