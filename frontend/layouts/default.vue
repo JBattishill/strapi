@@ -1,10 +1,10 @@
 <template>
   <div class="">
-    <nav class="uk-navbar-container" uk-navbar>
+    <nav class="uk-navbar-container headerbg" uk-navbar>
       <div class="uk-navbar-left uk-width-1-2">
         <ul class="uk-navbar-nav uk-padding-small">
           <li>
-            <a href="#modal-full" uk-toggle
+            <a class="uk-hidden@s" href="#modal-full" uk-toggle
               ><span uk-icon="icon: table"></span
             ></a>
           </li>
@@ -14,7 +14,7 @@
         </ul>
       </div>
 
-      <div class="uk-navbar-center">
+      <div class="uk-navbar-center uk-visible@s">
         <ul class="uk-navbar-nav">
           <li v-for="nav in navs.data" :key="nav.id">
             <NuxtLink 
