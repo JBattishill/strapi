@@ -5,6 +5,8 @@ query {
       attributes {
         title
         content
+        ingredients
+        method
         image {
           data {
             attributes {

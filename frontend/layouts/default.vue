@@ -9,7 +9,7 @@
             ></a>
           </li>
           <li>
-            <a href="/">Choose Nourish </a>
+            <a href="/index">Choose Nourish </a>
           </li>
         </ul>
       </div>
@@ -40,7 +40,7 @@
           <div
             class="uk-background-cover"
             style="
-              background-image: url('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3308&q=80 3308w');
+              background-image: url('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3308&q=80');
             "
             uk-height-viewport
           ></div>
@@ -57,7 +57,7 @@
                 </li>
               </ul>
             </div>
-            <p class="uk-text-light">Built with strapi</p>
+            <p class="uk-text-light">text default.vue - line 60</p>
           </div>
         </div>
       </div>

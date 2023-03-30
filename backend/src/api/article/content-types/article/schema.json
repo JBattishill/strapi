@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "article",
+    "displayName": "Article",
     "description": ""
   },
   "options": {
@@ -17,17 +17,15 @@
       "required": true
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "category": {
@@ -36,11 +34,13 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
-    "Ingredients": {
-      "type": "richtext"
+    "ingredients": {
+      "type": "richtext",
+      "required": true
     },
-    "Method": {
-      "type": "richtext"
+    "method": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

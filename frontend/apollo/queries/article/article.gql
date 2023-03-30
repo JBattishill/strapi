@@ -5,6 +5,8 @@ query Articles($id: ID!) {
       attributes {
         title
         content
+        ingredients
+        method
         image {
           data {
             attributes {

@@ -9,10 +9,12 @@ query Category($id: ID!){
             attributes {
               title
               content
+              ingredients
+              method
               image {
                 data {
                   attributes {
-                    url
+                  url
                   }
                 }
               }
