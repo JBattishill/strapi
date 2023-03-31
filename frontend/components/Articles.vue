@@ -2,7 +2,7 @@
   <div>
     <div class="uk-child-width-1-2" uk-grid>
       <div>
-        <router-link
+        <NuxtLink
           v-for="article in leftArticles"
           :to="{ name: 'articles-id', params: { id: article.id } }"
           class="uk-link-reset"
@@ -29,17 +29,17 @@
               </p>
             </div>
           </div>
-        </router-link>
+        </NuxtLink>
       </div>
       <div>
         <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
-          <router-link
+          <NuxtLink
             v-for="article in rightArticles"
             :to="{ name: 'articles-id', params: { id: article.id } }"
             class="uk-link-reset"
             :key="article.id"
           >
-            <div class="uk-card uk-card-muted">
+            <div class="uk-card uk-card-muted uk-card-hover">
               <div
                 v-if="article.attributes.image.data"
                 class="uk-card-media-top"
@@ -63,7 +63,7 @@
                 </p>
               </div>
             </div>
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
     </div>

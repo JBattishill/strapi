@@ -1,9 +1,9 @@
 query {
-  navs{
+  signins {
     data {
       id
       attributes {
-        Item
+        item
       }
     }
   }

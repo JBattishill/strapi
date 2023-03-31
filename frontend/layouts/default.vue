@@ -18,7 +18,7 @@
         <ul class="uk-navbar-nav">
           <li v-for="nav in navs.data" :key="nav.id">
             <NuxtLink 
-              :to="{ name: 'nav-id', params: { id: nav.id } }"
+              :to="{ name: 'navs-id', params: { id: nav.id } }"
               >{{ nav.attributes.Item }}
             </NuxtLink>
           </li>
@@ -45,7 +45,7 @@
                 <li v-for="nav in navs.data" :key="nav.id">
                   <NuxtLink
                     class="uk-modal-close"
-                    :to="{ name: 'nav-id', params: { id: nav.id } }"
+                    :to="{ name: 'navs-id', params: { id: nav.id } }"
                     >{{ nav.attributes.Item }}
                   </NuxtLink>
                 </li>
@@ -70,12 +70,16 @@ export default {
       navs: {
         data: [],
       },
+      api_url: process.env.strapiBaseUri,
     };
   },
   apollo: {
     navs: {
       prefetch: true,
       query: navsQuery,
+      variables() {
+            return { id: parseInt(this.$route.params.id) };
+        },
     },
   },
 };

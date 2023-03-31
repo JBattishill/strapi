@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import articleQuery from "~/apollo/queries/article/article";
+import articlesQuery from "~/apollo/queries/article/article";
 
 export default {
   data() {
@@ -40,7 +40,7 @@ export default {
   apollo: {
     article: {
       prefetch: true,
-      query: articleQuery,
+      query: articlesQuery,
       variables() {
         return { id: parseInt(this.$route.params.id) };
       },
