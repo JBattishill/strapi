@@ -1,0 +1,10 @@
+query Signin($id: ID!) {
+  signin(id: $id) {
+    data {
+      id
+      attributes {
+        item
+      }
+    }
+  }
+}

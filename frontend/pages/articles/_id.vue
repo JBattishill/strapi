@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="spacer"></div>
-
+<div class="imageContainer">
     <div
       v-if="article.data.attributes.image.data"
-      class="uk-align-center uk-width-expand uk-height-medium uk-margin-small"
+      class="headerImage uk-align-center uk-width-expand uk-height-medium uk-margin-small"
       :data-src="api_url + article.data.attributes.image.data.attributes.url"
       uk-img>
+    </div>
     </div>
 
     <div class="uk-section">

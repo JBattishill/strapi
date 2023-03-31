@@ -66,3 +66,21 @@ max-width: 20vw;
   background-color: #29539b;
   background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%) !important;
 }
+
+.imageContainer{
+display: block;
+height: 60vh;
+width: auto;
+margin: 0 auto;
+padding: 1rem;
+background-repeat: no-repeat;
+background-position: center; 
+}
+
+.headerImage{
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center; 
+}
