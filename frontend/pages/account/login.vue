@@ -13,5 +13,42 @@
         </div>
     
     </div>
-</div>
-</template>
+
+    <!-- Not functional yet  -->
+      <h2>Login</h2>
+      <form @submit.prevent="submitForm">
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" v-model="email">
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" v-model="password">
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        email: '',
+        password: ''
+      }
+    },
+    methods: {
+      async submitForm() {
+        try {
+          const response = await this.$strapi.login(this.email, this.password)
+          console.log(response)
+          this.$router.push('/')
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    }
+  }
+  </script>
+  

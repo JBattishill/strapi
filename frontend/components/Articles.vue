@@ -1,3 +1,4 @@
+<!-- Articles will be replaced by Recipes before final submission -->
 <template>
   <div>
     <div class="uk-child-width-1-2" uk-grid>

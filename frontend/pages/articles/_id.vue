@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="spacer"></div>
-<div class="imageContainer">
+    <div class="imageContainer">
     <div
       v-if="article.data.attributes.image.data"
       class="headerImage uk-align-center uk-width-expand uk-height-medium uk-margin-small"
