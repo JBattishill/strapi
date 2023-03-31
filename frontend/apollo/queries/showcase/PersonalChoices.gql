@@ -1,0 +1,10 @@
+query {
+  personalchoices{
+    data {
+      id
+      attributes {
+        name
+      }
+    }
+  }
+}

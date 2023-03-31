@@ -10,6 +10,20 @@
         </div>
       </div>
    </div>
+  
+   <div class="uk-section uk-align-center uk-text-center uk-width-3-4">
+    <h2>WIP - Showcase of Categories</h2>
+        <ul class="uk-navbar-nav">
+          <li><a href="/showcase/AllergyIntolerances">Allergies and Intolerances</a></li>
+          <li><a href="/showcase/Cuisines">Cuisines</a></li>
+          <li><a href="/showcase/MealTypes">Meal Types</a></li>
+          <li><a href="/showcase/MedicalConditions">Medical Conditions</a></li>
+          <li><a href="/showcase/NutritionAdjustments">Nutrition Adjustments</a></li>
+          <li><a href="/showcase/PersonalChoices">Personal Choices</a></li>
+          <li><a href="/showcase/Textures">Textures</a></li>
+        </ul>
+  </div>
+
 
     <div class="uk-section"> 
       <div class="uk-container uk-container-large uk-overflow-auto">

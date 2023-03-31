@@ -1,0 +1,10 @@
+query {
+  medicalConditions{
+    data {
+      id
+      attributes {
+        name
+      }
+    }
+  }
+}

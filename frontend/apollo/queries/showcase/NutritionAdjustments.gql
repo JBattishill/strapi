@@ -1,0 +1,10 @@
+query {
+  nutritionAdjustments{
+    data {
+      id
+      attributes {
+        name
+      }
+    }
+  }
+}

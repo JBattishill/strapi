@@ -1,0 +1,10 @@
+query {
+  allergyIntolerances{
+    data {
+      id
+      attributes {
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query {
+ mealTypes{
+    data {
+      id
+      attributes {
+        type
+      }
+    }
+  }
+}

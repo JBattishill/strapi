@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "allergy_intolerances",
+  "info": {
+    "singularName": "allergy-intolerance",
+    "pluralName": "allergy-intolerances",
+    "displayName": "Allergy Intolerance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

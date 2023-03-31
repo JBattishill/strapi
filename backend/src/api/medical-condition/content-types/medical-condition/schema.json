@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medical_conditions",
+  "info": {
+    "singularName": "medical-condition",
+    "pluralName": "medical-conditions",
+    "displayName": "Medical Condition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

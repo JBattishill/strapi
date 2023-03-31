@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nutrition_adjustments",
+  "info": {
+    "singularName": "nutrition-adjustment",
+    "pluralName": "nutrition-adjustments",
+    "displayName": "Nutrition Adjustment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}
