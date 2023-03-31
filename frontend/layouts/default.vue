@@ -9,7 +9,7 @@
             ></a>
           </li>
           <li>
-            <a href="/"><img class="toplogo uk-width-1-2@s uk-width-auto@m" src="../../frontend/static/whitecnlogo.png" alt="Choose Nourish Logo."/></a>
+            <a href="/"><img class="toplogo uk-width-3-4@s uk-width-1-2@m uk-width-3-4@l" src="../../frontend/static/whitecnlogo.png" alt="Choose Nourish Logo."/></a>
           </li>
         </ul>
       </div>
@@ -33,18 +33,12 @@
         <li>
           <a href="/account/signup">Signup</a>
         </li>
-          <!-- <li v-for="signin in signins.data" :key="signin.id">
-                  <NuxtLink
-                    class="uk-modal-close"
-                    :to="{ name: 'signins-id', params: { id: signin.id } }"
-                    >{{ signin.attributes.item }}
-                  </NuxtLink>
-                </li> -->
+
         </ul>
       </div>
     </nav>
 
-    <div id="modal-full" class="uk-modal-full" uk-modal>
+    <div id="modal-full" class="uk-modal-full uk-hidden@s" uk-modal>
       <div class="uk-modal-dialog">
         <button
           class="uk-modal-close-full uk-close-large"
@@ -67,13 +61,12 @@
                     >{{ nav.attributes.Item }}
                   </NuxtLink>
                 </li>
-                <!-- <li v-for="signin in signins.data" :key="signin.id">
-                  <NuxtLink
-                    class="uk-modal-close"
-                    :to="{ name: 'signins-id', params: { id: signin.id } }"
-                    >{{ signin.attributes.item }}
-                  </NuxtLink> -->
-                <!-- </li> -->
+                <li>
+                <a href="/account/login">Login</a>
+              </li>
+              <li>
+                <a href="/account/signup">Signup</a>
+              </li>
               </ul>
             </div>
             <p class="uk-text-light">Bottom menu - default.vue - line 60</p>
@@ -81,14 +74,12 @@
         </div>
       </div>
     </div>
-
     <Nuxt />
   </div>
 </template>
 
 <script>
 import navsQuery from "~/apollo/queries/nav/navs";
-// import signinQuery from "~/apollo/queries/signin/signins";
 
 export default {
   data() {
@@ -96,9 +87,7 @@ export default {
       navs: {
         data: [],
       },
-      // signins: {
-      //   data: [],
-      // },
+
       api_url: process.env.strapiBaseUri,
     };
   },
@@ -110,13 +99,7 @@ export default {
             return { id: parseInt(this.$route.params.id) };
         },
     },
-    // signins: {
-    //   prefetch: true,
-    //   query: signinQuery,
-    //   variables() {
-    //         return { id: parseInt(this.$route.params.id) };
-    //     },
-    // },
+ 
   },
 };
 </script>

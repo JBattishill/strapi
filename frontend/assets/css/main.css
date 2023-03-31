@@ -58,8 +58,8 @@ img:hover {
 }
 
 .toplogo{
-max-height: 5rem;
-max-width: 20vw;
+max-height: 6rem;
+margin: 0 auto !important;
 }
 
 .headerbg{
