@@ -9,7 +9,7 @@
             ></a>
           </li>
           <li>
-            <a href="/"><img class="toplogo" src="../../frontend/static/whitecnlogo.png" alt="Choose Nourish Logo."/></a>
+            <a href="/"><img class="toplogo uk-width-1-2@s uk-width-auto@m" src="../../frontend/static/whitecnlogo.png" alt="Choose Nourish Logo."/></a>
           </li>
         </ul>
       </div>
@@ -28,10 +28,10 @@
       <div class="uk-navbar-right uk-visible@s uk-width-1-4">
         <ul class="uk-navbar-nav uk-child-width-1-8">
           <li>
-          <a href="/login">Login</a>
+          <a href="/account/login">Login</a>
         </li>
         <li>
-          <a href="/signup">Signup</a>
+          <a href="/account/signup">Signup</a>
         </li>
           <!-- <li v-for="signin in signins.data" :key="signin.id">
                   <NuxtLink
@@ -67,13 +67,13 @@
                     >{{ nav.attributes.Item }}
                   </NuxtLink>
                 </li>
-                <li v-for="signin in signins.data" :key="signin.id">
+                <!-- <li v-for="signin in signins.data" :key="signin.id">
                   <NuxtLink
                     class="uk-modal-close"
                     :to="{ name: 'signins-id', params: { id: signin.id } }"
                     >{{ signin.attributes.item }}
-                  </NuxtLink>
-                </li>
+                  </NuxtLink> -->
+                <!-- </li> -->
               </ul>
             </div>
             <p class="uk-text-light">Bottom menu - default.vue - line 60</p>
@@ -88,7 +88,7 @@
 
 <script>
 import navsQuery from "~/apollo/queries/nav/navs";
-import signinQuery from "~/apollo/queries/signin/signins";
+// import signinQuery from "~/apollo/queries/signin/signins";
 
 export default {
   data() {
@@ -96,9 +96,9 @@ export default {
       navs: {
         data: [],
       },
-      signins: {
-        data: [],
-      },
+      // signins: {
+      //   data: [],
+      // },
       api_url: process.env.strapiBaseUri,
     };
   },
@@ -110,13 +110,13 @@ export default {
             return { id: parseInt(this.$route.params.id) };
         },
     },
-    signins: {
-      prefetch: true,
-      query: signinQuery,
-      variables() {
-            return { id: parseInt(this.$route.params.id) };
-        },
-    },
+    // signins: {
+    //   prefetch: true,
+    //   query: signinQuery,
+    //   variables() {
+    //         return { id: parseInt(this.$route.params.id) };
+    //     },
+    // },
   },
 };
 </script>
