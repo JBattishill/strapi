@@ -21,7 +21,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article",
-      "inversedBy": "allergy_intolerances"
+      "mappedBy": "allergy_intolerances"
     }
   }
 }

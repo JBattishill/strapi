@@ -47,6 +47,9 @@
       "relation": "manyToMany",
       "target": "api::allergy-intolerance.allergy-intolerance",
       "inversedBy": "articles"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

@@ -7,10 +7,13 @@
           :data-src="api_url + article.data.attributes.image.data.attributes.url"
           uk-img>
         </div>
+        <p v-else> loading...</p>
     </div>
-    <div class="uk-section">
+
+    
+    <div class="uk-section recipe">
       <div class="uk-container uk-container-small">
-      <p class="uk-heading-large uk-text-center uk-padding-small">{{article.data.attributes.title}}</p>
+      <span class="uk-heading-large uk-text-center uk-padding-small recipeTitle">{{article.data.attributes.title}}</span>
         <!-- successfully pulling all components of Recipe/Article -->
         <div class="uk-padding-small" v-if="article.data.attributes.category" id="editor" v-html="$md.render( article.data.attributes.category)"></div>
         <div class="uk-padding-small" v-if="article.data.attributes.content" id="editor" v-html="$md.render( article.data.attributes.content)"></div>
@@ -28,6 +31,7 @@ import articlesQuery from "~/apollo/queries/article/article";
 export default {
   data() {
     return {
+      prefetch: true,
       article: {
         data: [],
       },
