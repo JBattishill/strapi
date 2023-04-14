@@ -58,10 +58,10 @@
             <div class="uk-width-1-2@s">
               <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
                 <li>
-                <a href="/navs/nav2">Nav2</a>
+                <a href="/navs/easybreezy">Easy & Breezy</a>
                 </li>
                 <li>
-                <a href="/navs/nav3">Nav3</a>
+                <a href="/navs/recipes">Recipes</a>
                 </li>
                 <li>
                 <a href="/navs/entertaining">Entertaining</a>
