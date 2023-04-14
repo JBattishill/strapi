@@ -7,6 +7,12 @@
           :data-src="api_url + article.data.attributes.image.data.attributes.url"
           uk-img>
         </div>
+
+      <!-- <div
+          v-if="article.data.attributes.url"
+          class="headerImage uk-align-center uk-width-expand uk-height-medium uk-margin-small"
+          :data-src="article.data.attributes.url"
+          uk-img> </div> -->
         <p v-else> loading...</p>
     </div>
 
@@ -15,6 +21,7 @@
       <div class="uk-container uk-container-small">
       <span class="uk-heading-large uk-text-center uk-padding-small recipeTitle">{{article.data.attributes.title}}</span>
         <!-- successfully pulling all components of Recipe/Article -->
+        <div class="uk-padding-small" v-if="article.data.attributes.category" id="editor" v-html="$md.render( article.data.attributes.category)"></div>
         <div class="uk-padding-small" v-if="article.data.attributes.category" id="editor" v-html="$md.render( article.data.attributes.category)"></div>
         <div class="uk-padding-small" v-if="article.data.attributes.content" id="editor" v-html="$md.render( article.data.attributes.content)"></div>
         <div class="uk-padding-small" v-if="article.data.attributes.ingredients" id="editor" v-html="$md.render( article.data.attributes.ingredients)"></div>
