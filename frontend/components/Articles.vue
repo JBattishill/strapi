@@ -51,6 +51,7 @@
                   height="100"
                 />
               </div>
+              <p v-else> loading...</p>
               <div class="uk-card-body">
                 <p
                   id="category"
@@ -59,6 +60,7 @@
                 >
                   {{ article.attributes.category.data.attributes.name }}
                 </p>
+                <p v-else> loading...</p>
                 <p id="title" class="uk-text-small">
                   {{ article.attributes.title }}
                 </p>

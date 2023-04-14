@@ -1,3 +1,4 @@
+import fs from 'fs'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -64,8 +65,23 @@ export default {
     preset: 'default',
     linkify: true,
     breaks: true,
-    injected: true
+    injected: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ]
+  },
+  markdownit: {
+    runtime: true // Support `$md()`
   },
   
-  target: 'static'
+  target: 'static',
+
+  server: {
+    https: {
+      key: fs.readFileSync('./localhost/localhost.decrypted.key'),
+      cert: fs.readFileSync('./localhost/localhost.crt'),
+    }
+  }
 }
+

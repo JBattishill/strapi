@@ -16,12 +16,15 @@
 
       <div class="uk-navbar-center uk-visible@s uk-width-1-4">
         <ul class="uk-navbar-nav">
-          <li v-for="nav in navs.data" :key="nav.id">
-            <NuxtLink 
-              :to="{ name: 'navs-id', params: { id: nav.id } }"
-              >{{ nav.attributes.Item }}
-            </NuxtLink>
-          </li>
+         <li>
+         <a href="/navs/easybreezy">Easy Breezy</a>
+         </li>
+         <li>
+         <a href="/navs/recipes">Recipes</a>
+         </li>
+         <li>
+         <a href="/navs/entertaining">Entertaining</a>
+         </li>
         </ul>
       </div>
 
@@ -54,12 +57,14 @@
             
             <div class="uk-width-1-2@s">
               <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
-                <li v-for="nav in navs.data" :key="nav.id">
-                  <NuxtLink
-                    class="uk-modal-close"
-                    :to="{ name: 'navs-id', params: { id: nav.id } }"
-                    >{{ nav.attributes.Item }}
-                  </NuxtLink>
+                <li>
+                <a href="/navs/nav2">Nav2</a>
+                </li>
+                <li>
+                <a href="/navs/nav3">Nav3</a>
+                </li>
+                <li>
+                <a href="/navs/entertaining">Entertaining</a>
                 </li>
                 <li>
                 <a href="/account/login">Login</a>
@@ -77,29 +82,3 @@
     <Nuxt />
   </div>
 </template>
-
-<script>
-import navsQuery from "~/apollo/queries/nav/navs";
-
-export default {
-  data() {
-    return {
-      navs: {
-        data: [],
-      },
-
-      api_url: process.env.strapiBaseUri,
-    };
-  },
-  apollo: {
-    navs: {
-      prefetch: true,
-      query: navsQuery,
-      variables() {
-            return { id: parseInt(this.$route.params.id) };
-        },
-    },
- 
-  },
-};
-</script>
