@@ -29,6 +29,9 @@ h1 {
   font-size: 1rem;
   line-height: 1.75;
 }
+.largeTextBox{
+  height: 20vh;
+}
 
 .uk-navbar-container {
   background: #031458 !important;
