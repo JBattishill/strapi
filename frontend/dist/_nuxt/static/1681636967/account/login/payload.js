@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/account/login", {data:[{}],fetch:{},mutations:void 0});

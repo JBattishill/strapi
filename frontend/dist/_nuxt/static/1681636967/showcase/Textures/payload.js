@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/showcase/Textures", {data:[{}],fetch:{},mutations:void 0});

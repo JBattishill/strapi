@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/navs/easybreezy", {data:[{}],fetch:{},mutations:void 0});
