@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/showcase/MealTypes", {data:[{}],fetch:{},mutations:void 0});
