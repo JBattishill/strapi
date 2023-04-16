@@ -3,7 +3,7 @@
     <div class="uk-section uk-width-3-4 uk-margin-auto">
       <h2>Create a Recipe - Almost Functional? maybe?</h2> <br>
 
-      <form @submit.prevent="ArticleCreation">
+      <form action="" @submit.prevent="ArticleCreation">
         <label>
           Title:
           <input 
@@ -12,7 +12,6 @@
           class="uk-input uk-form-medium uk-margin-small" 
           placeholder="Recipe Name"
           >
-          
         </label> <br> <br>
 
         <label>
@@ -45,11 +44,20 @@
           ></textarea>
         </label> <br> <br>
         
+        <label>
+          URl for an image of this meal:
+          <textarea 
+          v-model="url"
+          type="text" 
+          class="uk-input uk-form-medium uk-margin-small" 
+          placeholder="Image URL"
+          ></textarea>
+        </label> <br> <br>
+        
         <button class="uk-button uk-button-primary" 
           type="submit">Submit
         </button>
       </form>
-
     </div>
   </template>
   
@@ -60,28 +68,41 @@
 
 <script>
 import gql from 'graphql-tag'
+import {date} from '@/constants/'
 
 export default {
-  name: "ArticleCreation",
+  name: "articleCreation",
   data() {
     return {
       title: '',
       content: '',
       ingredients: '',
       method: '',
+      url: '',
     }
   },
+
   methods: {
-    ArticleCreation() {
+    ArticleCreation(event) {
+      console.log(date),
       this.$apollo
       .mutate({
-        mutation: gql`
-      mutation createArticle {
-        createArticle(data: {
-           title: "Jarryd's Non Variable Test", 
-             content: "test@test.cz", 
-             ingredients: "479332973", 
-             method: "method", 
+      mutation: gql`
+      mutation (
+        $title: String
+        $content: String
+        $ingredients: String
+        $method: String
+        $url: String
+        $publishedAt: DateTime)
+
+       {createArticle(data: {
+            title: $title, 
+             content: $content, 
+             ingredients: $ingredients, 
+             method: $method, 
+             url: $url, 
+             publishedAt: $publishedAt,
       }) {
             data{
               id
@@ -90,52 +111,24 @@ export default {
                 content
                 ingredients
                 method
+                url
+                publishedAt
               }
             }
       }
     },
-    `,
-    },
-  )},
+      `,
+          variables: {
+          title: this.title,
+          content: this.content,
+          ingredients: this.ingredients,
+          method: this.method,
+          url: this.url,
+          publishedAt: date
+  },
 },
-}
+ ).then(data =>{
+  event.target.reset()})
+}}}    
 
 </script>
-<!-- 
-//           # (
-//           #   $title: String
-//           #   $content: String
-//           #   $ingredients: String
-//           #   $method: String
-//           # )
-//           # {(data: {
-//           #       title: $title,
-//           #       content: $content,
-//           #       ingredients: $ingredients,
-//           #       method: $method,
-//           #     }) 
-//           # }
-//           # `,
-//           #variables: {
-//           #title: this.title,
-//           #content: this.content,
-//           #ingredients: this.ingredients,
-//           #method: this.method,
-
-
-
-// # mutation createArticle {
-// #   createArticle(data: {
-// #       title: "test22", 
-// #       content: "test@test.cz", 
-// #       ingredients: "479332973", 
-// #       method: "David", 
-// #       }) {
-// #             data{
-// #               id
-// #                attributes{
-// #                 title
-// #                 content
-// #                 ingredients
-// #                 method
-// #               } -->
