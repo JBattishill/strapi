@@ -75,7 +75,7 @@ export default {
     runtime: true // Support `$md()`
   },
   
-  // target: 'static',
+  target: 'static',
 
   server: {
     https: {
