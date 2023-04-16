@@ -1,30 +1,53 @@
 <template>
 
     <div class="uk-section uk-width-3-4 uk-margin-auto">
-      <h2>Create a Recipe - Not currently functional</h2> <br>
+      <h2>Create a Recipe - Almost Functional? maybe?</h2> <br>
 
-      <form @submit.prevent="handleSubmit">
+      <form @submit.prevent="ArticleCreation">
         <label>
           Title:
-          <input class="uk-input uk-form-medium uk-margin-small" type="text" v-model="title">
+          <input 
+          v-model="title"
+          type="text" 
+          class="uk-input uk-form-medium uk-margin-small" 
+          placeholder="Recipe Name"
+          >
+          
         </label> <br> <br>
 
         <label>
           Content:
-          <textarea class="uk-input  uk-form-medium uk-margin-small" v-model="content"></textarea>
+          <textarea 
+          v-model="content"
+          type="text" 
+          class="largeTextBox uk-input uk-form-medium uk-margin-small" 
+          placeholder="Calories, Serves, Protein, etc."
+          ></textarea>
         </label> <br> <br>
 
         <label>
           Ingredients:
-          <textarea class="uk-input  uk-form-medium uk-margin-small" v-model="ingredients"></textarea>
+          <textarea 
+          v-model="ingredients"
+          type="text" 
+          class="largeTextBox uk-input uk-form-medium uk-margin-small" 
+          placeholder="Ingredients used"
+          ></textarea>
         </label> <br> <br>
 
         <label>
           Method:
-          <textarea class="uk-input uk-margin-small" v-model="method"></textarea>
+          <textarea 
+          v-model="method"
+          type="text" 
+          class="largeTextBox uk-input uk-form-medium uk-margin-small" 
+          placeholder="Cookings method and instructions"
+          ></textarea>
         </label> <br> <br>
         
-        <button class="uk-button uk-button-primary" type="submit">Submit</button>
+        <button class="uk-button uk-button-primary" 
+          type="submit">Submit
+        </button>
       </form>
 
     </div>
@@ -36,40 +59,83 @@
     -->
 
 <script>
-import { gql } from 'graphql-tag'
+import gql from 'graphql-tag'
 
 export default {
+  name: "ArticleCreation",
   data() {
     return {
       title: '',
       content: '',
       ingredients: '',
       method: '',
-      image: ''
     }
   },
   methods: {
-    async handleSubmit() {
-      const addArticleResponse = await this.$apollo.mutate({
+    ArticleCreation() {
+      this.$apollo
+      .mutate({
         mutation: gql`
-          mutation ($input: ArticleInput!) {
-            addArticle(input: $input) {
-              _id
+      mutation createArticle {
+        createArticle(data: {
+           title: "Jarryd's Non Variable Test", 
+             content: "test@test.cz", 
+             ingredients: "479332973", 
+             method: "method", 
+      }) {
+            data{
+              id
+               attributes{
+                title
+                content
+                ingredients
+                method
+              }
             }
-          }
-        `,
-        variables: {
-          input: {
-            title: this.title,
-            content: this.content,
-            ingredients: this.ingredients,
-            method: this.method,
-            image: this.image
-          }
-        }
-      })
-      console.log(addArticleResponse.data.addArticle._id)
-    }
-  }
+      }
+    },
+    `,
+    },
+  )},
+},
 }
+
 </script>
+<!-- 
+//           # (
+//           #   $title: String
+//           #   $content: String
+//           #   $ingredients: String
+//           #   $method: String
+//           # )
+//           # {(data: {
+//           #       title: $title,
+//           #       content: $content,
+//           #       ingredients: $ingredients,
+//           #       method: $method,
+//           #     }) 
+//           # }
+//           # `,
+//           #variables: {
+//           #title: this.title,
+//           #content: this.content,
+//           #ingredients: this.ingredients,
+//           #method: this.method,
+
+
+
+// # mutation createArticle {
+// #   createArticle(data: {
+// #       title: "test22", 
+// #       content: "test@test.cz", 
+// #       ingredients: "479332973", 
+// #       method: "David", 
+// #       }) {
+// #             data{
+// #               id
+// #                attributes{
+// #                 title
+// #                 content
+// #                 ingredients
+// #                 method
+// #               } -->
